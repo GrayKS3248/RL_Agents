@@ -55,7 +55,7 @@ class Pendulum():
         i = max(0, min(self.n_theta - 1, i))
         j = max(0, min(self.n_thetadot - 1, j))
         # Convert to state
-        return int(i * self.n_theta + j)
+        return int(i * self.n_thetadot + j)
 
     def _a_to_u(self, a):
         return -self.max_tau + ((2 * self.max_tau * a) / (self.n_tau - 1))
@@ -79,11 +79,15 @@ class Pendulum():
         # Convert x to s
         self.s = self._x_to_s(self.x)
 
+        # Get theta - wrapping to [-pi, pi) - and thetadot
+        theta = ((self.x[0] + np.pi) % (2 * np.pi)) - np.pi
+        thetadot = self.x[1]
+
         # Compute reward
-        if abs(self.x[1]) > self.max_thetadot:
+        if abs(thetadot) > self.max_thetadot:
             # If constraints are violated, then return large negative reward
             r = -100
-        elif abs(self.x[0]) < self.max_theta_for_upright:
+        elif abs(theta) < self.max_theta_for_upright:
             # If pendulum is upright, then return small positive reward
             r = 1
         else:
@@ -109,3 +113,7 @@ class Pendulum():
         self.t = self.num_steps * self.dt
 
         return self.s
+
+    def render(self):
+        # FIXME (we will happily accept a PR to create a graphic visualization of the pendulum)
+        pass
