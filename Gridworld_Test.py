@@ -136,8 +136,8 @@ if __name__ == '__main__':
     n_a = env.num_actions
     
     # Simulation parameters
-    n_sets = 10
-    n_episodes = 300
+    n_sets = 2
+    n_episodes = 2
     n_steps = env.max_num_steps
     
     # Agent parameters
