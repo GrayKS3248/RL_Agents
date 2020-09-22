@@ -130,7 +130,7 @@ if __name__ == '__main__':
     cbar.set_label('Expected Return')
     title_str = "Q-Learning Value Function: \u03B1 = " + str(alpha) + ", \u03B3 = " + str(gamma) + ", \u03B5 = " + str(epsilon)
     plt.title(title_str)
-    plt.savefig('Example Results/Pendulum/qln_val_fnc.png', dpi = 200)
+    plt.savefig('Example_Results/Pendulum/qln_val_fnc.png', dpi = 200)
     
     plt.clf()
     c = plt.pcolor(grid[0], grid[1], s_agent.logbook['avg_V'], shading = 'auto')
@@ -138,7 +138,7 @@ if __name__ == '__main__':
     cbar.set_label('Expected Return')
     title_str = "SARSA Value Function: \u03B1 = " + str(alpha) + ", \u03B3 = " + str(gamma) + ", \u03B5 = " + str(epsilon)
     plt.title(title_str)
-    plt.savefig('Example Results/Pendulum/sar_val_fnc.png', dpi = 200)
+    plt.savefig('Example_Results/Pendulum/sar_val_fnc.png', dpi = 200)
         
     # Plot policies
     plt.clf()
@@ -147,7 +147,7 @@ if __name__ == '__main__':
     cbar.set_label('Expected Return')
     title_str = "Q-Learning Policy: \u03B1 = " + str(alpha) + ", \u03B3 = " + str(gamma) + ", \u03B5 = " + str(epsilon)
     plt.title(title_str)
-    plt.savefig('Example Results/Pendulum/qln_pol.png', dpi = 200)
+    plt.savefig('Example_Results/Pendulum/qln_pol.png', dpi = 200)
     
     plt.clf()
     c = plt.pcolor(grid[0], grid[1], s_agent.logbook['avg_p'], shading = 'auto')
@@ -155,7 +155,7 @@ if __name__ == '__main__':
     cbar.set_label('Expected Return')
     title_str = "SARSA Policy: \u03B1 = " + str(alpha) + ", \u03B3 = " + str(gamma) + ", \u03B5 = " + str(epsilon)
     plt.title(title_str)
-    plt.savefig('Example Results/Pendulum/sar_pol.png', dpi = 200)
+    plt.savefig('Example_Results/Pendulum/sar_pol.png', dpi = 200)
     
     # Plot average of Value function curves
     plt.clf()
@@ -166,7 +166,7 @@ if __name__ == '__main__':
     plt.legend(["QLN", "SAR"])
     plt.xlabel('Simulation Step')
     plt.ylabel('Average of Value Function')
-    plt.savefig('Example Results/Pendulum/val_cur.png', dpi = 200)
+    plt.savefig('Example_Results/Pendulum/val_cur.png', dpi = 200)
     plt.close()
     
     # Plot reward curves    
@@ -178,7 +178,7 @@ if __name__ == '__main__':
     plt.legend(["QLN", "SAR"])
     plt.xlabel('Simulation Step')
     plt.ylabel('Total Reward')
-    plt.savefig('Example Results/Pendulum/rwd_cur.png', dpi = 200)
+    plt.savefig('Example_Results/Pendulum/rwd_cur.png', dpi = 200)
     plt.close()
     
     # Plot learning curves
@@ -190,7 +190,7 @@ if __name__ == '__main__':
     plt.legend(["QLN", "SAR"])
     plt.xlabel('Simulation Step')
     plt.ylabel('Total Discounted Reward')
-    plt.savefig('Example Results/Pendulum/lrn_cur.png', dpi = 200)
+    plt.savefig('Example_Results/Pendulum/lrn_cur.png', dpi = 200)
     plt.close()
     
     # Plot trajectories
@@ -202,7 +202,7 @@ if __name__ == '__main__':
     plt.plot([*range(len(q_agent.logbook['best_r']))], q_agent.logbook['best_r'])
     plt.legend(["s", "a", "r"])
     plt.xlabel('Simulation Step')
-    plt.savefig('Example Results/Pendulum/qln_trj.png', dpi = 200)
+    plt.savefig('Example_Results/Pendulum/qln_trj.png', dpi = 200)
     plt.close()
 
     plt.clf()
@@ -212,7 +212,7 @@ if __name__ == '__main__':
     plt.plot([*range(len(qlrn_theta_dot))], qlrn_theta_dot)
     plt.legend(["\u03B8", "\u03B8'"])
     plt.xlabel('Simulation Step')
-    plt.savefig('Example Results/Pendulum/qln_tru_trj.png', dpi = 200)
+    plt.savefig('Example_Results/Pendulum/qln_tru_trj.png', dpi = 200)
     plt.close()    
 
     plt.clf()
@@ -223,7 +223,7 @@ if __name__ == '__main__':
     plt.plot([*range(len(s_agent.logbook['best_r']))], s_agent.logbook['best_r'])
     plt.legend(["s", "a", "r"])
     plt.xlabel('Simulation Step')
-    plt.savefig('Example Results/Pendulum/sar_trj.png', dpi = 200)
+    plt.savefig('Example_Results/Pendulum/sar_trj.png', dpi = 200)
     plt.close()
     
     plt.clf()
@@ -233,7 +233,7 @@ if __name__ == '__main__':
     plt.plot([*range(len(sarsa_theta_dot))], sarsa_theta_dot)
     plt.legend(["\u03B8", "\u03B8'"])
     plt.xlabel('Simulation Step')
-    plt.savefig('Example Results/Pendulum/sar_tru_trj.png', dpi = 200)
+    plt.savefig('Example_Results/Pendulum/sar_tru_trj.png', dpi = 200)
     plt.close()  
     
     print("Plotting complete!")

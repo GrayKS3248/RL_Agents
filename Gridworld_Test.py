@@ -160,8 +160,8 @@ if __name__ == '__main__':
     q_agent = qa.QLearn_Agent(n_s, n_a, n_rows, n_cols, alpha, gamma, epsilon)  
     
     # Traine model based agents
-    p_agent.train(path = "Example Results/Gridworld/")
-    v_agent.train(path = "Example Results/Gridworld/")
+    p_agent.train(path = "Example_Results/Gridworld/")
+    v_agent.train(path = "Example_Results/Gridworld/")
     
     # Run the defined number of sets and update the average
     start = time.time()
@@ -182,7 +182,7 @@ if __name__ == '__main__':
     cbar.set_label('Expected Return')
     title_str = "Q-Learning Value Function: \u03B1 = " + str(alpha) + ", \u03B3 = " + str(gamma) + ", \u03B5 = " + str(epsilon)
     plt.title(title_str)
-    plt.savefig('Example Results/Gridworld/qln_val_fnc.png', dpi = 200)
+    plt.savefig('Example_Results/Gridworld/qln_val_fnc.png', dpi = 200)
     
     plt.clf()
     c = plt.pcolor(grid[0], grid[1], s_agent.logbook['avg_V'], shading = 'auto')
@@ -190,7 +190,7 @@ if __name__ == '__main__':
     cbar.set_label('Expected Return')
     title_str = "SARSA Value Function: \u03B1 = " + str(alpha) + ", \u03B3 = " + str(gamma) + ", \u03B5 = " + str(epsilon)
     plt.title(title_str)
-    plt.savefig('Example Results/Gridworld/sar_val_fnc.png', dpi = 200)
+    plt.savefig('Example_Results/Gridworld/sar_val_fnc.png', dpi = 200)
     
     plt.clf()
     c = plt.pcolor(grid[0], grid[1], p_agent.get_V(), shading = 'auto')
@@ -198,7 +198,7 @@ if __name__ == '__main__':
     cbar.set_label('Expected Return')
     title_str = "Policy Iteration Value Function: \u03B3 = " + str(gamma)
     plt.title(title_str)
-    plt.savefig('Example Results/Gridworld/pol_val_fnc.png', dpi = 200)
+    plt.savefig('Example_Results/Gridworld/pol_val_fnc.png', dpi = 200)
     
     plt.clf()
     c = plt.pcolor(grid[0], grid[1], v_agent.get_V(), shading = 'auto')
@@ -206,7 +206,7 @@ if __name__ == '__main__':
     cbar.set_label('Expected Return')
     title_str = "Value Iteration Value Function: \u03B3 = " + str(gamma)
     plt.title(title_str)
-    plt.savefig('Example Results/Gridworld/val_val_fnc.png', dpi = 200)
+    plt.savefig('Example_Results/Gridworld/val_val_fnc.png', dpi = 200)
         
     # Plot policies
     plt.clf()
@@ -215,7 +215,7 @@ if __name__ == '__main__':
     cbar.set_label('Expected Return')
     title_str = "Q-Learning Policy: \u03B1 = " + str(alpha) + ", \u03B3 = " + str(gamma) + ", \u03B5 = " + str(epsilon)
     plt.title(title_str)
-    plt.savefig('Example Results/Gridworld/qln_pol.png', dpi = 200)
+    plt.savefig('Example_Results/Gridworld/qln_pol.png', dpi = 200)
     
     plt.clf()
     c = plt.pcolor(grid[0], grid[1], s_agent.logbook['avg_p'], shading = 'auto')
@@ -223,7 +223,7 @@ if __name__ == '__main__':
     cbar.set_label('Expected Return')
     title_str = "SARSA Policy: \u03B1 = " + str(alpha) + ", \u03B3 = " + str(gamma) + ", \u03B5 = " + str(epsilon)
     plt.title(title_str)
-    plt.savefig('Example Results/Gridworld/sar_pol.png', dpi = 200)
+    plt.savefig('Example_Results/Gridworld/sar_pol.png', dpi = 200)
     
     plt.clf()
     c = plt.pcolor(grid[0], grid[1], p_agent.get_p(), shading = 'auto')
@@ -231,7 +231,7 @@ if __name__ == '__main__':
     cbar.set_label('Expected Return')
     title_str = "Policy Iteration Policy: \u03B3 = " + str(gamma)
     plt.title(title_str)
-    plt.savefig('Example Results/Gridworld/pol_pol.png', dpi = 200)
+    plt.savefig('Example_Results/Gridworld/pol_pol.png', dpi = 200)
     
     plt.clf()
     c = plt.pcolor(grid[0], grid[1], v_agent.get_p(), shading = 'auto')
@@ -239,7 +239,7 @@ if __name__ == '__main__':
     cbar.set_label('Expected Return')
     title_str = "Value Iteration Policy: \u03B3 = " + str(gamma)
     plt.title(title_str)
-    plt.savefig('Example Results/Gridworld/val_pol.png', dpi = 200)
+    plt.savefig('Example_Results/Gridworld/val_pol.png', dpi = 200)
     
     # Plot average of Value function curves
     plt.clf()
@@ -250,7 +250,7 @@ if __name__ == '__main__':
     plt.legend(["QLN", "SAR"])
     plt.xlabel('Simulation Step')
     plt.ylabel('Average of Value Function')
-    plt.savefig('Example Results/Gridworld/val_cur.png', dpi = 200)
+    plt.savefig('Example_Results/Gridworld/val_cur.png', dpi = 200)
     plt.close()
     
     # Plot reward curves    
@@ -264,7 +264,7 @@ if __name__ == '__main__':
     plt.legend(["QLN", "SAR", "POL", "VAL"])
     plt.xlabel('Simulation Step')
     plt.ylabel('Total Reward')
-    plt.savefig('Example Results/Gridworld/rwd_cur.png', dpi = 200)
+    plt.savefig('Example_Results/Gridworld/rwd_cur.png', dpi = 200)
     plt.close()
     
     # Plot learning curves
@@ -278,7 +278,7 @@ if __name__ == '__main__':
     plt.legend(["QLN", "SAR", "POL", "VAL"])
     plt.xlabel('Simulation Step')
     plt.ylabel('Total Discounted Reward')
-    plt.savefig('Example Results/Gridworld/lrn_cur.png', dpi = 200)
+    plt.savefig('Example_Results/Gridworld/lrn_cur.png', dpi = 200)
     plt.close()
     
     # Plot trajectories
@@ -290,7 +290,7 @@ if __name__ == '__main__':
     plt.plot([*range(len(q_agent.logbook['best_r']))], q_agent.logbook['best_r'])
     plt.legend(["s", "a", "r"])
     plt.xlabel('Simulation Step')
-    plt.savefig('Example Results/Gridworld/qln_trj.png', dpi = 200)
+    plt.savefig('Example_Results/Gridworld/qln_trj.png', dpi = 200)
     plt.close()
     
     plt.clf()
@@ -301,7 +301,7 @@ if __name__ == '__main__':
     plt.plot([*range(len(s_agent.logbook['best_r']))], s_agent.logbook['best_r'])
     plt.legend(["s", "a", "r"])
     plt.xlabel('Simulation Step')
-    plt.savefig('Example Results/Gridworld/sar_trj.png', dpi = 200)
+    plt.savefig('Example_Results/Gridworld/sar_trj.png', dpi = 200)
     plt.close()
     
     plt.clf()
@@ -312,7 +312,7 @@ if __name__ == '__main__':
     plt.plot([*range(len(p_agent.logbook['best_r']))], p_agent.logbook['best_r'])
     plt.legend(["s", "a", "r"])
     plt.xlabel('Simulation Step')
-    plt.savefig('Example Results/Gridworld/pol_trj.png', dpi = 200)
+    plt.savefig('Example_Results/Gridworld/pol_trj.png', dpi = 200)
     plt.close()
     
     plt.clf()
@@ -323,7 +323,7 @@ if __name__ == '__main__':
     plt.plot([*range(len(v_agent.logbook['best_r']))], v_agent.logbook['best_r'])
     plt.legend(["s", "a", "r"])
     plt.xlabel('Simulation Step')
-    plt.savefig('Example Results/Gridworld/val_trj.png', dpi = 200)
+    plt.savefig('Example_Results/Gridworld/val_trj.png', dpi = 200)
     plt.close()
     
     print("Plotting complete!")
